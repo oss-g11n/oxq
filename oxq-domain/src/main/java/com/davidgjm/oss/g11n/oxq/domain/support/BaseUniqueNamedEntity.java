@@ -10,7 +10,7 @@ import javax.persistence.MappedSuperclass;
  * Created by david on 2017/2/22.
  */
 @MappedSuperclass
-public abstract class BaseUniqueNamedEntity extends BaseDescriptionEntity {
+public abstract class BaseUniqueNamedEntity extends BaseNamedEntity {
 
     @NotBlank
     @Length(min = 1, max = 255)
@@ -23,5 +23,13 @@ public abstract class BaseUniqueNamedEntity extends BaseDescriptionEntity {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("BaseUniqueNamedEntity{");
+        sb.append("name='").append(name).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }

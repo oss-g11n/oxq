@@ -10,7 +10,7 @@ import javax.persistence.MappedSuperclass;
  * Created by david on 2017/2/22.
  */
 @MappedSuperclass
-public abstract class BaseNamedEntity extends BaseTimestampedEntity {
+public abstract class BaseNamedEntity extends BaseDescriptionEntity {
 
     @NotBlank
     @Length(min = 1, max = 255)
